@@ -1,4 +1,4 @@
-package com.vominh.app.netlive;
+package com.vominh.app.netlive.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
