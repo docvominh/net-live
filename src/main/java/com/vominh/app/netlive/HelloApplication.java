@@ -1,7 +1,5 @@
 package com.vominh.app.netlive;
 
-import com.vominh.app.netlive.service.CLibrary;
-import com.vominh.app.netlive.service.MacLibrary;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,10 +21,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) throws SocketException {
-        var networks = NetworkInterface.getNetworkInterfaces();
 
-
-        System.out.println(CLibrary.INSTANCE.atol("5"));
 
         infor();
         launch();
