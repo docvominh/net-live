@@ -5,26 +5,32 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.NetworkInterface;
-import java.net.SocketException;
 
-public class HelloApplication extends Application {
+public class NetLiveApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(NetLiveApplication.class.getResource("app.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(NetLiveApplication.class.getResource("app.css").toExternalForm());
+        stage.setTitle("Net Live");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
 
-    public static void main(String[] args) throws SocketException {
+    public static void main(String[] args) throws IOException {
+        final Taskbar taskbar = Taskbar.getTaskbar();
+        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        Image image  = ImageIO.read(classloader.getResource("app-icon.png"));
+        taskbar.setIconImage(image);
 
-
-        infor();
-        launch();
+        launch(args);
     }
 
 
