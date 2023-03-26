@@ -9,6 +9,7 @@
       <list>
         <option value="$PROJECT_DIR$/../oshi/oshi-demo/pom.xml" />
         <option value="$PROJECT_DIR$/../wifi-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/../java/java-fx-video-play/pom.xml" />
       </list>
     </option>
   </component>
